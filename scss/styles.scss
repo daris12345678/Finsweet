@@ -1,0 +1,547 @@
+@import 'base.scss';
+
+//SECTION ONE //
+
+.section-header {
+    background: url('../img/man-sit.jpg') 0 0/cover no-repeat;
+    height: 720px;
+    margin-bottom: 128px;
+    min-width: 1280px;
+}
+
+.section-header_container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 128px;
+}
+
+.header-container_info {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.container_rubric {
+    @include text-components($color_bl, 'Inter', 16px, 600, 20px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $color_wt;
+    font-weight: 400;
+
+    span {
+        font-weight: 900;
+    }
+}
+
+.container-title {
+    @include text-components($color_wt, 'Sen', 56px, 700, 64px);
+    letter-spacing: -2px;
+    max-width: 803px;
+}
+
+.container-subtitle {
+    @include text-components($color_wt, 'Inter', 16px, 400, 28px);
+    max-width: 243px;
+    
+    .subtitle-color {
+        color: $color_yl;
+    }
+}
+
+.section-header_info {
+    @include text-components($color_wt, 'Inter', 16px, 400, 28px);
+    max-width: 599px;
+    margin-bottom: 48px;
+}
+
+.yellow-btn {
+    @extend %yellow-btn;
+}
+
+.yellow-btn_alt {
+
+    &:hover {
+        box-shadow: 0px 1px 20px -3px rgb(0, 0, 0);
+    }
+    
+}
+
+.yellow-btn:hover::after, .yellow-btn:hover::before {
+    left: 79%;
+}
+
+// SECTION TWO //
+
+.featured-post {
+    margin-bottom: 128px;
+}
+
+.featured-post_div {
+    max-width: 1282px;
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+.featured-post_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-post_titles {
+    display: flex;
+    gap: 542px;
+}
+
+.featured-title {
+    @include text-components($color_bl, 'Sen', 36px, 700, 48px);
+    letter-spacing: -2px;
+}
+
+.featured-post_link a {
+    position: relative;
+    @include text-components($color_purple, 'Inter', 16px, 400, 28px);
+
+    &:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1.5px;
+		bottom: 0;
+		margin: -5px 0;
+		background-color: rgb(89, 46, 169, 0.6);
+		visibility: hidden;
+		transform: scaleX(0);
+		transition: all 0.4s ease-in-out 0s;
+	}
+
+	&:hover:before {
+		visibility: visible;
+		transform: scaleX(1);
+	}
+}
+
+.featured-post_container {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.featured-post_info {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    padding: 32px;
+    border: 1px solid rgb(109, 110, 118, 0.1);
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.all-posts_rubric {
+    @include text-components(rgb(76, 76, 76), 'Inter', 14px, 500, 20px);
+    max-width: 202px;
+
+    span {
+        color: $color_purple;
+    }
+}
+
+.img-title {
+    @include text-components($color_bl, 'Sen', 28px, 700, 40px);
+    letter-spacing: -1px;
+    max-width: 669px;
+}
+
+.img-subtitle {
+    @include text-components($color_gr, 'Inter', 16px, 400, 28px);
+    max-width: 551px;
+}
+
+.all-posts_container{
+    display: block;
+    max-width: 517px;
+    max-height: 181px;
+    padding: 32px 115px 25px 32px;
+    transition: all 0.2s ease 0s;
+
+    &:hover {
+        background: $color_light-yl;
+    }
+}
+
+.all-posts_title {
+    @include text-components($color_bl, 'Sen', 24px, 700, 32px);
+}
+
+// SECTION THREE //
+
+.about-us_container {
+    background: url('../img/our-mission_background.png') 0 0/cover no-repeat;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 119px 108px 96px 80px;
+    display: flex;
+    gap: 61px;
+}
+
+.about-us_rubrics {
+    display: flex;
+    align-items: center;
+    gap: 473px;
+}
+
+.about-us_rubric {
+    @include text-components($color_bl, 'Inter', 16px, 600, 20px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.about-us_info {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+}
+
+.about-us_content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-us_title {
+    max-width: 494px;
+}
+
+.about-us_subtitle {
+    max-width: 515px;
+}
+
+.our-mission_title {
+    @include text-components($color_bl, 'Sen', 28px, 700, 40px);
+    letter-spacing: -1px;
+    width: 379px;
+}
+
+.about-us_btn {
+    background: none;
+    @include text-components($color_purple, 'Sen', 18px, 700, 32px);
+    width: 112px;
+    height: 32px;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 84%;
+        height: 1.5px;
+        bottom: 5px;
+        margin: -5px 0;
+        background-color: rgba(89, 46, 169, 0.6);
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.4s ease-in-out 0s;
+    }
+
+    &:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    span {
+        position: absolute;
+        left: 97%;
+        transition: all 0.4s ease 0s;
+    }
+}
+
+.about-us_btn:hover span {
+    left: 103%;
+}
+
+// SECTION FOUR //
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+}
+
+.section-category {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+}
+
+.category-title {
+    @include text-components($color_bl, 'Sen', 36px, 700, 40px);
+    letter-spacing: -2px;
+}
+
+.category-container {
+    display: flex;
+    gap: 32px;
+}
+
+.category-link {
+    padding: 32px;
+    border: 1px solid rgb(109, 110, 118, 0.2);
+    max-width: 296px;
+    transition: all 0.2s ease 0s;
+
+    &:hover {
+        background: $color_yl;
+    }
+}
+
+.category-link_img {
+    margin-bottom: 16px;
+}
+
+.category-link_title {
+    @include text-components($color_bl, 'Sen', 28px, 700, 40px);
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+}
+
+// SECTION FIVE //
+
+.our-story_container {
+    display: flex;
+    gap: 32px;
+    position: absolute;
+    top: 18%;
+    left: 45%;
+    padding: 80px;
+    background: url(../img/background.jpg) no-repeat;
+    width: 706px;
+    height: 584px;
+    flex-direction: column;
+}
+
+.section_our-story {
+    background: url('../img/hug-ppl.jpg') no-repeat;
+    height: 705px;
+    max-width: 1280px;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 128px;
+}
+
+.our-story_title {
+    @include text-components($color_bl, 'Sen', 48px, 700, 64px);
+    letter-spacing: -2px;
+}
+
+.our-story_subtitle {
+    max-width: 546px;
+}
+
+.our-story_btn {
+    width: 272px;
+    height: 56px;
+}
+
+.discover-btn {
+
+    &::before, &::after {
+        left: 83%;
+    }
+}
+
+.discover-btn:hover::after, .discover-btn:hover::before {
+    left: 86%;
+}
+
+// SECTION SIX //
+
+.authors-link {
+    background: rgb(244, 244, 244);
+    padding: 40px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.2s ease 0s;
+
+    &:hover {
+        background: rgb(251, 246, 234);
+        box-shadow: 0px 5px 16px 0px rgb(109, 110, 118, 0.2);
+        transform: translateY(-2%);
+    }
+}
+
+.authors-link_img {
+    width: 128px;
+    height: 128px;
+}
+
+.authors-link_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authors-link_title {
+    font-size: 28px;
+    letter-spacing: -2px;
+}
+
+.authors-link_subtitle {
+    width: 240px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.authors-link_icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logos-text_rubric {
+    @include text-components($color_bl, 'Inter', 14px, 400, 20px);
+    opacity: 0.6;
+}
+
+.logos-text_title {
+    opacity: 0.7;
+}
+
+.featured-logos {
+    display: flex;
+    align-items: center;
+    gap: 86px;
+    justify-content: center;
+}
+
+.featured-logos_logo {
+    display: flex;
+    gap: 73px;
+
+    a {
+        opacity: 0.8;
+        transition: all 0.2s ease 0s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// SECTION SEVEN //
+
+.testimonials {
+    max-width: 1280px;
+    background: $color_light-yl;
+    margin: 0 auto;
+    padding: 80px 112px;
+    margin-bottom: 128px;
+}
+
+.testimonials-container {
+    display: flex;
+    gap: 176px;
+    align-items: baseline;
+}
+
+.testimonials-info {
+    max-width: 349px;
+    gap: 12px;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        border: 1px solid rgb(109, 110, 118);
+        opacity: 0.4;
+        width: 310px;
+        transform: rotate(90deg);
+        left: 78%;
+        top: 74%;
+    }
+}
+
+.testimonials-subtitle {
+    color: $color_bl;
+}
+
+.testimonials-content {
+    display: flex;
+    flex-direction: column;
+    gap: 121px;
+}
+
+.testimonials-content_title {
+    width: 469px;
+}
+
+.testimonials-profile {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    width: 257px;
+}
+
+.testimonials_profile-arrows {
+    display: flex;
+    align-items: center;
+    gap: 141px;
+}
+
+.testimonials-arrows {
+    display: flex;
+    width: 136px;
+    height: 64px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow-left {
+    background: url('../img/svg/left-btn.svg') 50% no-repeat;
+    border-radius: 35px;
+    width: 62px;
+    height: 62px;
+    transition: all 0.1s ease 0s;
+
+    &:hover {
+        background: url('../img/svg/left-btn_black.svg') 50% no-repeat;
+    }
+}
+
+.arrow-right {
+    background: url('../img/svg/right-btn.svg') 50% no-repeat;
+
+    &:hover {
+        background: url('../img/svg/right-btn_black.svg') 50% no-repeat;
+    }
+}
+
+// SECTION EIGHT //
+
+.join-team {
+    max-width: 414px;
+    max-height: 256px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 128px;
+}
+
+.yellow-btn_without_arrow {
+    @extend %yellow-btn_without_arrow;
+    width: 179px;
+}
+
+@import 'footer.scss';

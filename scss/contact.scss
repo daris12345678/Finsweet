@@ -1,0 +1,124 @@
+@import 'base.scss';
+
+// SECTION ONE //
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 128px;
+}
+
+.conversation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 768px;
+    margin: 0 auto;
+}
+
+.conversation-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.conversation-title {
+    @include text-components($color_bl, 'Sen', 48px, 700, 64px);
+    letter-spacing: -2px;
+}
+
+.conversation-subtitle {
+    @include text-components($color_gr, 'Inter', 16px, 400, 28px);
+    text-align: center;
+}
+
+.conversation-rubric {
+    @include text-components($color_bl, 'Inter', 16px, 900, 20px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+// SECTION TWO //
+
+.wrapper-section {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.contact-us_container {
+    display: flex;
+    gap: 72px;
+    padding: 48px 64px;
+}
+
+.working-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.working-hours_title {
+    @include text-components($color_wt, 'Inter', 14px, 400, 28px);
+    opacity: 0.6;
+    position: relative;
+
+    &::before {
+        content: "";
+        border: 1px solid $color_wt;
+        background: rgb(255, 255, 255);
+        opacity: 0.1;
+        position: absolute;
+        display: block;
+        opacity: 0.1;
+        width: 294px;
+        top: 138%;
+    }
+}
+
+.working-hours_info {
+    @include text-components($color_wt, 'Sen', 20px, 700, 32px);
+}
+
+.working-hours_note {
+    color: $color_wt;
+    opacity: 0.6;
+}
+
+.contact-us_container {
+    background: $color_purple;
+    width: 768px;
+    height: 240px; 
+    margin: 0 auto;
+}
+
+// INPUTS //
+
+.inputs {
+    width: 768px;
+    margin: 0 auto;
+}
+
+.inputs-form {
+    gap: 16px;
+}
+
+.contact-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(109, 110, 118, 0.5);
+    border-radius: 2px;
+    @include text-components($color_bl, 'Inter', 16px, 400, 28px);
+    padding: 24px;
+    max-height: 144px;
+}
+
+
+@import 'footer.scss';
+
+.yellow-btn {
+    width: 100%;
+    @extend %yellow-btn_without_arrow;
+}

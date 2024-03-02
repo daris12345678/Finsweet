@@ -1,0 +1,126 @@
+@import 'base.scss';
+
+// SECTION ONE //
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 128px;
+}
+
+.andrew-jonhson {
+    background: url('../img/author-background.jpg') 0 0/cover no-repeat;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.andrew-jonhson_container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;
+}
+
+.andrew-jonhson_info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.andrew-jonhson_title {
+    @include text-components($color_bl, 'Sen', 48px, 700, 64px);
+    letter-spacing: -2px;
+}
+
+.andrew-jonhson_subtitle {
+    @include text-components($color_gr, 'Inter', 16px, 400, 28px);
+}
+
+.andrew-jonhson_icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.andrew_link_icons {
+
+    &:hover > svg > g > path {
+        fill: $color_gr;
+        transition: all 0.3s ease 0s;
+    }
+
+    &:hover > svg > path {
+        fill: $color_gr;
+        transition: all 0.3s ease 0s;
+    }
+}
+
+// SECTION TWO //
+
+.posts {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.all-posts_div {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    border: 2px solid rgb(109, 110, 118, 0);
+    transition: all 0.2s ease-in;
+
+    &:hover {
+        border: 2px solid rgb(109, 110, 118, 0.1);
+    }
+}
+
+.all-posts_img {
+    border-right: 2px solid rgb(109, 110, 118, 0);
+}
+
+.all-posts_div:hover .all-posts_img {
+    border-right: 2px solid rgb(109, 110, 118, 0.1);
+}
+
+.posts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.all-posts_text {
+    gap: 16px;
+    width: 580px;
+}
+
+.posts-info_rubric {
+    @include text-components($color_purple, 'Inter', 16px, 600, 20px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.posts_title {
+    @include text-components($color_bl, 'Sen', 36px, 700, 48px);
+    letter-spacing: -2px;
+}
+
+.posts_subtitle {
+    @include text-components($color_gr, 'Inter', 16px, 400, 28px);
+}
+
+.posts-categories {
+    gap: 40px;
+}
+
+@import 'footer.scss';

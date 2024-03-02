@@ -1,0 +1,180 @@
+@import 'nullstyles.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sen:wght@700&display=swap');
+
+@mixin text-components ($col, $ff, $fz, $fw, $lh) {
+    color: $col;
+    font-family: $ff;
+    font-size: $fz;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin nav-transform($translateX, $translateY, $transition: all 0.2s ease-in-out, $opacity: 1) {
+    @supports (-webkit-appearance: none) {
+      -webkit-transform: translate($translateX, $translateY);
+      -webkit-transition: $transition;
+    }
+    transform: translate($translateX, $translateY);
+    transition: $transition;
+    opacity: $opacity;
+}
+
+$color_yl: rgb(255, 208, 80);
+$color_wt: rgb(255, 255, 255);
+$color_bl: rgb(35, 37, 54);
+$color_gr: rgb(109, 110, 118);
+$color_light-yl: rgb(251, 246, 234);
+$color_purple: rgb(89, 46, 169);
+
+%yellow-btn {
+    width: 208px;
+    height: 56px;
+    background: $color_yl;
+    padding: 16px 48px;
+    transition: all 0.3s ease-in-out 0s;
+    position: relative;
+    @include text-components($color_bl, 'Sen', 18px, 700, 24px);
+
+        &::after {
+            transform: rotate(45deg);
+            top: 46%;
+            position: absolute;
+            left: 76%;
+            content: "";
+            width: 6px;
+            height: 1.5px;
+            background: $color_bl;
+            transition: left .3s ease-in;
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+            top: 53%;
+            position: absolute;
+            left: 76%;
+            content: "";
+            width: 6px;
+            height: 1.5px;
+            background: $color_bl;
+            transition: left .3s ease-in;
+        }
+
+    &:hover {
+        background: rgb(237, 193, 74);
+        box-shadow: 0px 4px 18px -10px rgb(0, 0, 0);
+        transform: translateY(-4%);
+    }
+}
+
+%yellow-btn_without_arrow {
+    width: 208px;
+    height: 56px;
+    background: $color_yl;
+    padding: 16px 48px;
+    transition: all 0.3s ease-in-out 0s;
+    @include text-components($color_bl, 'Sen', 18px, 700, 24px);
+
+    &:hover {
+        background: rgb(237, 193, 74);
+        box-shadow: 0px 4px 18px -10px rgb(0, 0, 0);
+        transform: translateY(-4%);
+    }
+}
+
+%nav-btn {
+    @include text-components($color_bl, 'Sen', 18px, 400, 24px);
+    background: $color_wt;
+    padding: 14px 46px;
+    border: 2px solid $color_wt;
+    transition: all 0.3s ease 0s;
+    max-width: 204px;
+
+    &:hover {
+        background: none;
+        color: $color_wt;
+    }
+}
+
+// HEADER //
+
+.header {
+    background: $color_bl;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    min-width: 1280px;
+}
+.header-content {
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 12px;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-circle {
+    width: 6px;
+    height: 6px;
+    background: $color_yl;
+    border-radius: 50%;
+    @include nav-transform(-283px, 15px);
+    opacity: 0;
+}
+  
+.nav-link:first-child:hover ~ .nav-circle {
+    @include nav-transform(-283px, 15px);
+}
+  
+.nav-link:nth-child(2):hover ~ .nav-circle {
+    @include nav-transform(-223px, 15px);
+}
+  
+.nav-link:nth-child(3):hover ~ .nav-circle {
+    @include nav-transform(-147px, 15px);
+}
+  
+.nav-link:nth-child(4):hover ~ .nav-circle {
+    @include nav-transform(-49px, 15px);
+}
+
+.nav-link {
+    @include text-components($color_wt, 'Inter', 16px, 400, 28px);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: $color_yl;
+    }
+
+    &:first-child {
+        width: 68px;
+    }
+
+    &:nth-child(2) {
+        width: 57px;
+    }
+
+    &:nth-child(3) {
+        width: 94px;
+    }
+
+    &:nth-child(4) {
+        width: 87px;
+    }
+}
+
+.nav-btn {
+    @extend %nav-btn;
+}

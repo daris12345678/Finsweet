@@ -1,0 +1,118 @@
+// FOOTER //
+
+.footer {
+    background: $color_bl;
+    padding: 56px 80px;
+}
+
+.footer-container {
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 12px;
+    margin-bottom: 57px;
+}
+
+.footer-nav {
+    gap: 24px;
+}
+
+.footer-nav_link {
+    @include text-components($color_wt, 'Inter', 16px, 400, 28px);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: $color_yl;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.footer-content {
+    max-width: 1280px;
+    max-height: 256px;
+    background: rgb(255, 255, 255, 0.05);
+    padding: 80px 64px;
+    display: flex;
+    gap: 64px;
+    margin-bottom: 48px;
+}
+
+.footer-title {
+    width: 562px;
+    @include text-components($color_wt, 'Sen', 36px, 700, 48px);
+    letter-spacing: -2px;
+}
+
+.footer-form_input {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.footer-form {
+    width: 323px;
+    height: 56px;
+}
+
+.footer-input {
+    padding: 14px 163px 14px 25px;
+    border: 1px solid rgb(109, 110, 118, 0.2);
+    background: none;
+    width: 323px;
+    height: 56px;
+}
+
+.footer-link_icons {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.link_icons {
+    transition: all 0.3s ease 0s;
+
+    &:hover > svg > g > path {
+        transition: all 0.3s ease 0s;
+        fill: $color_wt;
+    }
+}
+
+.footer-adress {
+    @include text-components($color_wt, 'Inter', 16px, 400, 28px);
+    opacity: 0.5;
+}
+
+.footer-email {
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.footer-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_subtitle {
+    @include text-components($color_gr, 'Inter', 16px, 400, 28px);
+}
+
+.footer-btn {
+    @include text-components($color_bl, 'Sen', 18px, 400, 24px);
+    background: $color_yl;
+    padding: 14px 46px;
+    border: 2px solid $color_yl;
+    transition: all 0.3s ease 0s;
+    width: 179px;
+
+    &:hover {
+        border: 2px solid $color_wt;
+        background: none;
+        color: $color_wt;
+    }
+}
